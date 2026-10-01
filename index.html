@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cheick Kone, développeur d'applications</title>
+<meta name="description" content="Portfolio de Cheick Kone, étudiant en BTS Informatique Développeur d'Applications à Yamoussoukro. Développement web sécurisé, bases de données, cybersécurité.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070d0c; --side:#0a1513; --panel:#0e1c19; --line:#173029;
+  --text:#d6e4e0; --muted:#8aa39d; --accent:#2ee6b8; --phos:#7dff9b; --silver:#b8c4c2;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  --side-w:260px;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{background:var(--bg);color:var(--text);font:400 1rem/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--phos);outline-offset:3px}
+
+/* Barre latérale */
+.side{position:fixed;inset:0 auto 0 0;width:var(--side-w);background:var(--side);border-right:1px solid var(--line);padding:32px 24px;display:flex;flex-direction:column;gap:28px}
+.id strong{display:block;font:600 1.25rem/1.25 var(--sans);color:#fff}
+.id span{display:block;margin-top:6px;font:400 .85rem/1.4 var(--mono);color:var(--accent)}
+.nav{display:flex;flex-direction:column;gap:4px}
+.nav a{color:var(--silver);text-decoration:none;padding:7px 12px;border-left:2px solid transparent;font-size:.95rem}
+.nav a:hover,.nav a.on{color:#fff;border-left-color:var(--accent);background:rgba(46,230,184,.06)}
+.side .meta{margin-top:auto;font:400 .8rem/1.7 var(--mono);color:var(--muted)}
+.side .meta b{color:var(--silver);font-weight:400}
+
+/* Contenu */
+main{margin-left:var(--side-w);padding:0 clamp(24px,5vw,72px) 80px;max-width:calc(var(--side-w) + 960px)}
+section{padding-top:72px}
+h2{font:600 1.6rem/1.2 var(--sans);color:#fff;margin-bottom:24px}
+h2::after{content:"";display:block;width:40px;height:3px;background:var(--accent);margin-top:12px}
+p{max-width:68ch}
+
+/* Hero terminal */
+.hero{padding-top:56px}
+.term{background:#050a09;border:1px solid var(--line);border-radius:8px;overflow:hidden;box-shadow:0 0 0 1px rgba(46,230,184,.05),0 20px 60px rgba(0,0,0,.5)}
+.term-bar{display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--panel);border-bottom:1px solid var(--line);font:400 .78rem var(--mono);color:var(--muted)}
+.term-bar i{width:10px;height:10px;border-radius:50%;background:var(--line)}
+.term-bar i:first-child{background:var(--accent)}
+.term-body{padding:20px 22px;min-height:260px;font:400 clamp(.82rem,1.6vw,.95rem)/1.8 var(--mono);color:var(--phos);white-space:pre-wrap;word-break:break-word}
+.term-body .p{color:var(--accent)}
+.term-body .o{color:var(--silver)}
+.cur{display:inline-block;width:.6em;height:1.05em;background:var(--phos);vertical-align:-.15em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero h1{font:600 clamp(2rem,4.5vw,3rem)/1.1 var(--sans);color:#fff;margin:40px 0 14px;letter-spacing:-.02em}
+.hero .lead{font-size:1.15rem;color:var(--silver)}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-block;padding:11px 20px;border-radius:6px;font-weight:500;text-decoration:none;border:1px solid var(--accent);color:var(--accent)}
+.btn.main{background:var(--accent);color:#04120e}
+.btn:hover{background:var(--phos);border-color:var(--phos);color:#04120e}
+
+/* Compétences */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.skill{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:20px}
+.skill h3{font:600 1rem var(--sans);color:#fff;margin-bottom:4px}
+.skill small{display:block;color:var(--muted);font-size:.82rem;margin-bottom:14px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0}
+.tags li{font:400 .8rem var(--mono);color:var(--phos);border:1px solid var(--line);border-radius:4px;padding:3px 9px;background:#08130f}
+.tags li.base{color:var(--muted)}
+.note{margin-top:14px;font-size:.85rem;color:var(--muted)}
+
+/* Projets */
+.projects{display:grid;gap:20px}
+.proj{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:6px;padding:24px}
+.proj.big{border-left-color:var(--phos)}
+.proj h3{font:600 1.2rem var(--sans);color:#fff}
+.proj .ctx{font:400 .82rem var(--mono);color:var(--muted);margin:4px 0 14px}
+.proj ul{margin:14px 0 0 18px;color:var(--silver)}
+.proj li{margin-bottom:4px}
+.proj .tags{margin-top:16px}
+
+/* Parcours */
+.tl{list-style:none;padding:0;border-left:1px solid var(--line);margin-left:6px}
+.tl li{position:relative;padding:0 0 22px 24px}
+.tl li::before{content:"";position:absolute;left:-5px;top:9px;width:9px;height:9px;border-radius:50%;background:var(--accent)}
+.tl b{color:#fff;font-weight:500}
+.tl span{display:block;color:var(--muted);font-size:.9rem}
+
+/* Contact */
+.contact dl{display:grid;grid-template-columns:auto 1fr;gap:8px 20px;font-family:var(--mono);font-size:.92rem}
+.contact dt{color:var(--muted)}
+.contact dd{color:var(--silver)}
+footer{margin-top:64px;color:var(--muted);font:400 .8rem var(--mono)}
+
+/* Mobile */
+@media (max-width:860px){
+  .side{position:sticky;top:0;inset:auto;width:100%;flex-direction:row;align-items:center;justify-content:space-between;padding:12px 18px;gap:12px;border-right:0;border-bottom:1px solid var(--line);z-index:5}
+  .id span,.side .meta{display:none}
+  .id strong{font-size:1rem}
+  .nav{flex-direction:row;overflow-x:auto;gap:0}
+  .nav a{border-left:0;border-bottom:2px solid transparent;padding:6px 10px;white-space:nowrap;font-size:.88rem}
+  .nav a:hover,.nav a.on{border-bottom-color:var(--accent)}
+  main{margin-left:0}
+  section{padding-top:56px}
+  .hero{padding-top:32px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cur{animation:none}}
+</style>
+</head>
+<body>
+
+<aside class="side">
+  <div class="id">
+    <strong>Cheick Kone</strong>
+    <span>dev --secure</span>
+  </div>
+  <nav class="nav" aria-label="Navigation principale">
+    <a href="#accueil">Accueil</a>
+    <a href="#competences">Compétences</a>
+    <a href="#projets">Projets</a>
+    <a href="#parcours">Parcours</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="meta">
+    <b>Yamoussoukro</b><br>Côte d'Ivoire<br>
+    <b>07 78 38 96 65</b>
+  </div>
+</aside>
+
+<main>
+  <section class="hero" id="accueil">
+    <div class="term" aria-label="Présentation animée">
+      <div class="term-bar"><i></i><i></i><i></i>&nbsp;cheick@portfolio:~</div>
+      <div class="term-body" id="term" aria-live="off"></div>
+    </div>
+    <h1>Je construis des applications web, en pensant sécurité dès le départ.</h1>
+    <p class="lead">Étudiant en deuxième année de BTS Informatique Développeur d'Applications à ESETEC. Je cherche un stage, puis un premier emploi de développeur d'applications, avec l'objectif de devenir analyste en cybersécurité.</p>
+    <div class="cta">
+      <a class="btn main" href="#projets">Voir mes projets</a>
+      <a class="btn" href="#contact">Me contacter</a>
+    </div>
+  </section>
+
+  <section id="competences">
+    <h2>Compétences</h2>
+    <div class="skills">
+      <div class="skill">
+        <h3>Développement</h3>
+        <small>Programmation et web</small>
+        <ul class="tags">
+          <li>PHP</li><li>JavaScript</li><li>HTML / CSS</li><li>C</li><li>VB .NET</li>
+          <li class="base">Python (bases)</li><li class="base">Flutter (bases)</li>
+        </ul>
+      </div>
+      <div class="skill">
+        <h3>Bases de données</h3>
+        <small>Modélisation et requêtes</small>
+        <ul class="tags">
+          <li>SQL</li><li>MySQL</li><li>MariaDB</li><li>Merise</li>
+        </ul>
+      </div>
+      <div class="skill">
+        <h3>Réseaux et sécurité</h3>
+        <small>En apprentissage</small>
+        <ul class="tags">
+          <li>Cisco Packet Tracer</li><li>Kali Linux</li><li>TryHackMe</li>
+        </ul>
+      </div>
+      <div class="skill">
+        <h3>Outils</h3>
+        <small>Environnement de travail</small>
+        <ul class="tags">
+          <li>WAMP</li><li>EasyPHP</li><li class="base">Git / GitHub (notions)</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">Les compétences en grisé sont au niveau des bases ou des notions. Je les travaille activement.</p>
+  </section>
+
+  <section id="projets">
+    <h2>Projets</h2>
+    <div class="projects">
+
+      <article class="proj big">
+        <h3>SERFIB, gestion de séminaire</h3>
+        <p class="ctx">Projet réalisé seul en 2 mois, utilisé par plus de 150 participants</p>
+        <p>Application web qui gère l'organisation d'un séminaire, de l'inscription des participants à l'attribution de leur chambre.</p>
+        <ul>
+          <li>Authentification et deux rôles : Admin et Accueil</li>
+          <li>Attribution automatique des chambres</li>
+          <li>Génération de codes et de pass pour chaque participant</li>
+          <li>Tableau de bord statistique</li>
+        </ul>
+        <ul class="tags"><li>PHP</li><li>MySQL</li><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+      </article>
+
+      <article class="proj">
+        <h3>Site d'une coopérative viticole</h3>
+        <p class="ctx">Projet du BTS</p>
+        <p>Site web présentant l'activité d'une coopérative viticole, réalisé dans le cadre de la formation.</p>
+        <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+      </article>
+
+      <article class="proj">
+        <h3>Site e-commerce personnel</h3>
+        <p class="ctx">Projet personnel</p>
+        <p>Boutique en ligne développée en PHP pour pratiquer la gestion de produits et de commandes.</p>
+        <ul class="tags"><li>PHP</li><li>MySQL</li></ul>
+      </article>
+
+    </div>
+    <p class="note">Code source bientôt disponible sur GitHub.</p>
+  </section>
+
+  <section id="parcours">
+    <h2>Parcours</h2>
+    <ul class="tl">
+      <li><b>BTS Informatique Développeur d'Applications</b><span>ESETEC, Yamoussoukro, en cours (2025-2026)</span></li>
+      <li><b>Formation en cybersécurité</b><span>3 mois</span></li>
+      <li><b>Formation WinDev</b><span>2 jours</span></li>
+      <li><b>Baccalauréat série D</b><span>Collège Notre Dame des Lacs 1, 2023-2024</span></li>
+    </ul>
+    <p class="note">Membre des communautés FATA School et Google Developer Group (GDG).</p>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Contact</h2>
+    <p style="margin-bottom:20px">Je cherche un stage en développement d'applications. Écrivez-moi ou appelez-moi.</p>
+    <dl>
+      <dt>Téléphone</dt><dd><a href="tel:+2250778389665">07 78 38 96 65</a></dd>
+      <dt>Ville</dt><dd>Yamoussoukro, Côte d'Ivoire</dd>
+      <dt>E-mail</dt><dd>à ajouter</dd>
+      <dt>GitHub</dt><dd>à ajouter</dd>
+    </dl>
+    <footer>© 2026 Cheick Kone</footer>
+  </section>
+</main>
+
+<script>
+(function(){
+  var lines=[
+    {p:"$ ",c:"whoami",o:"cheick, étudiant développeur à Yamoussoukro"},
+    {p:"$ ",c:"cat objectif.txt",o:"Développeur d'applications sécurisées.\nFutur analyste en cybersécurité."},
+    {p:"$ ",c:"ls projets/",o:"serfib/   cooperative-viticole/   boutique-en-ligne/"},
+    {p:"$ ",c:"echo $STATUT",o:"Disponible pour un stage"}
+  ];
+  var el=document.getElementById("term");
+  var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+  function full(){
+    el.innerHTML=lines.map(function(l){return '<span class="p">'+l.p+'</span>'+esc(l.c)+'\n<span class="o">'+esc(l.o)+'</span>\n'}).join("")+'<span class="p">$ </span><span class="cur"></span>';
+  }
+  if(reduce){full();return}
+  var html="",i=0;
+  function render(extra){el.innerHTML=html+extra+'<span class="cur"></span>'}
+  function next(){
+    if(i>=lines.length){html+='<span class="p">$ </span>';render("");return}
+    var l=lines[i],j=0;
+    (function type(){
+      if(j<=l.c.length){render('<span class="p">'+l.p+'</span>'+esc(l.c.slice(0,j)));j++;setTimeout(type,45)}
+      else{
+        html+='<span class="p">'+l.p+'</span>'+esc(l.c)+'\n<span class="o">'+esc(l.o)+'</span>\n';
+        render("");i++;setTimeout(next,450);
+      }
+    })();
+  }
+  setTimeout(next,400);
+
+  var links=[].slice.call(document.querySelectorAll(".nav a"));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute("href"))});
+  function spy(){
+    var y=window.scrollY+120,cur=0;
+    secs.forEach(function(s,k){if(s.offsetTop<=y)cur=k});
+    links.forEach(function(a,k){a.classList.toggle("on",k===cur)});
+  }
+  window.addEventListener("scroll",spy,{passive:true});spy();
+})();
+</script>
+</body>
+</html>
