@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cheick Kone, développeur d'applications</title>
-<meta name="description" content="Portfolio de Cheick Kone, étudiant en BTS Informatique Développeur d'Applications à Yamoussoukro. Développement web sécurisé, bases de données, cybersécurité.">
+<title>Cheick Mamadou Boris Kone, développeur d'applications</title>
+<meta name="description" content="Portfolio de Cheick Kone, titulaire d'un BTS Informatique Développeur d'Applications, à Yamoussoukro. Développement web sécurisé, bases de données, cybersécurité.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -77,6 +77,27 @@ p{max-width:68ch}
 .proj li{margin-bottom:4px}
 .proj .tags{margin-top:16px}
 
+/* Captures */
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:22px}
+.shots figure{margin:0}
+.shots img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;display:block;border:1px solid var(--line);border-radius:6px;background:#fff}
+.shots a:hover img{border-color:var(--accent)}
+.shots figcaption{font-size:.82rem;color:var(--muted);margin-top:6px}
+
+/* Formulaire */
+form{margin-top:28px;max-width:560px;display:grid;gap:14px}
+form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:grid;gap:6px;font-size:.9rem;color:var(--silver)}
+input,select,textarea{font:400 1rem var(--sans);color:var(--text);background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:10px 12px;width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
+textarea{resize:vertical;min-height:120px}
+.hp{position:absolute;left:-9999px;height:0;width:0;opacity:0}
+button.btn{cursor:pointer;font:500 1rem var(--sans);justify-self:start}
+#status{min-height:1.4em;font-size:.9rem;color:var(--muted)}
+#status.ok{color:var(--phos)}
+#status.err{color:#ff8a7a}
+@media (max-width:560px){form .row{grid-template-columns:1fr}}
+
 /* Parcours */
 .tl{list-style:none;padding:0;border-left:1px solid var(--line);margin-left:6px}
 .tl li{position:relative;padding:0 0 22px 24px}
@@ -109,7 +130,7 @@ footer{margin-top:64px;color:var(--muted);font:400 .8rem var(--mono)}
 
 <aside class="side">
   <div class="id">
-    <strong>Cheick Kone</strong>
+    <strong>Cheick Mamadou Boris Kone</strong>
     <span>dev --secure</span>
   </div>
   <nav class="nav" aria-label="Navigation principale">
@@ -132,7 +153,7 @@ footer{margin-top:64px;color:var(--muted);font:400 .8rem var(--mono)}
       <div class="term-body" id="term" aria-live="off"></div>
     </div>
     <h1>Je construis des applications web, en pensant sécurité dès le départ.</h1>
-    <p class="lead">Étudiant en deuxième année de BTS Informatique Développeur d'Applications à ESETEC. Je cherche un stage, puis un premier emploi de développeur d'applications, avec l'objectif de devenir analyste en cybersécurité.</p>
+    <p class="lead">Titulaire d'un BTS Informatique Développeur d'Applications (ESETEC). Je cherche un stage, puis un premier emploi de développeur d'applications, avec l'objectif de devenir analyste en cybersécurité.</p>
     <div class="cta">
       <a class="btn main" href="#projets">Voir mes projets</a>
       <a class="btn" href="#contact">Me contacter</a>
@@ -190,6 +211,15 @@ footer{margin-top:64px;color:var(--muted);font:400 .8rem var(--mono)}
           <li>Tableau de bord statistique</li>
         </ul>
         <ul class="tags"><li>PHP</li><li>MySQL</li><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+        <div class="shots">
+          <figure><a href="serfib-tableau-de-bord.webp" target="_blank" rel="noopener"><img src="serfib-tableau-de-bord.webp" alt="Tableau de bord de la direction SERFIB 2026 avec le total des participants et les recettes" loading="lazy"></a><figcaption>Tableau de bord de la direction</figcaption></figure>
+          <figure><a href="serfib-indicateurs.webp" target="_blank" rel="noopener"><img src="serfib-indicateurs.webp" alt="Indicateurs : comptes actifs, taux d'occupation, répartition par type et besoins logistiques" loading="lazy"></a><figcaption>Indicateurs : occupation, répartition, logistique</figcaption></figure>
+          <figure><a href="serfib-chambres.webp" target="_blank" rel="noopener"><img src="serfib-chambres.webp" alt="Page de gestion des chambres avec capacité, genre et statut" loading="lazy"></a><figcaption>Gestion des chambres</figcaption></figure>
+          <figure><a href="serfib-participants.webp" target="_blank" rel="noopener"><img src="serfib-participants.webp" alt="Liste des participants avec recherche, statut et chambre attribuée" loading="lazy"></a><figcaption>Liste des participants et recherche</figcaption></figure>
+          <figure><a href="serfib-comptes.webp" target="_blank" rel="noopener"><img src="serfib-comptes.webp" alt="Gestion des comptes avec les rôles Admin et Accueil" loading="lazy"></a><figcaption>Gestion des comptes et des rôles</figcaption></figure>
+          <figure><a href="serfib-rapport-pdf.webp" target="_blank" rel="noopener"><img src="serfib-rapport-pdf.webp" alt="Rapport PDF de la liste des participants généré par l'application" loading="lazy"></a><figcaption>Rapport PDF généré automatiquement</figcaption></figure>
+        </div>
+        <p class="note">Captures de l'environnement de démonstration (données de test). Cliquez sur une image pour l'agrandir.</p>
       </article>
 
       <article class="proj">
@@ -213,7 +243,7 @@ footer{margin-top:64px;color:var(--muted);font:400 .8rem var(--mono)}
   <section id="parcours">
     <h2>Parcours</h2>
     <ul class="tl">
-      <li><b>BTS Informatique Développeur d'Applications</b><span>ESETEC, Yamoussoukro, en cours (2025-2026)</span></li>
+      <li><b>BTS Informatique Développeur d'Applications</b><span>ESETEC, Yamoussoukro</span></li>
       <li><b>Formation en cybersécurité</b><span>3 mois</span></li>
       <li><b>Formation WinDev</b><span>2 jours</span></li>
       <li><b>Baccalauréat série D</b><span>Collège Notre Dame des Lacs 1, 2023-2024</span></li>
@@ -222,12 +252,29 @@ footer{margin-top:64px;color:var(--muted);font:400 .8rem var(--mono)}
   </section>
 
   <section class="contact" id="contact">
-    <h2>Contact</h2>
-    <p style="margin-bottom:20px">Je cherche un stage en développement d'applications. Écrivez-moi ou appelez-moi.</p>
-    <dl>
+    <h2>Contact et avis</h2>
+    <p>Je cherche un stage en développement d'applications. Vous pouvez aussi me laisser un avis sur ce portfolio ou sur mes projets.</p>
+    <form id="msg" novalidate>
+      <div class="row">
+        <label>Nom<input name="nom" required autocomplete="name"></label>
+        <label>E-mail (facultatif)<input type="email" name="email" autocomplete="email"></label>
+      </div>
+      <label>Sujet
+        <select name="sujet">
+          <option>Avis sur le portfolio</option>
+          <option>Proposition de stage ou d'emploi</option>
+          <option>Autre</option>
+        </select>
+      </label>
+      <label>Message<textarea name="message" rows="5" required></textarea></label>
+      <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn main" type="submit">Envoyer le message</button>
+      <p id="status" role="status"></p>
+    </form>
+    <dl style="margin-top:36px">
       <dt>Téléphone</dt><dd><a href="tel:+2250778389665">07 78 38 96 65</a></dd>
       <dt>Ville</dt><dd>Yamoussoukro, Côte d'Ivoire</dd>
-      <dt>E-mail</dt><dd>à ajouter</dd>
+      <dt>E-mail</dt><dd id="mailline">à ajouter</dd>
       <dt>GitHub</dt><dd>à ajouter</dd>
     </dl>
     <footer>© 2026 Cheick Kone</footer>
@@ -237,7 +284,7 @@ footer{margin-top:64px;color:var(--muted);font:400 .8rem var(--mono)}
 <script>
 (function(){
   var lines=[
-    {p:"$ ",c:"whoami",o:"cheick, étudiant développeur à Yamoussoukro"},
+    {p:"$ ",c:"whoami",o:"cheick, développeur d'applications à Yamoussoukro"},
     {p:"$ ",c:"cat objectif.txt",o:"Développeur d'applications sécurisées.\nFutur analyste en cybersécurité."},
     {p:"$ ",c:"ls projets/",o:"serfib/   cooperative-viticole/   boutique-en-ligne/"},
     {p:"$ ",c:"echo $STATUT",o:"Disponible pour un stage"}
@@ -272,6 +319,35 @@ footer{margin-top:64px;color:var(--muted);font:400 .8rem var(--mono)}
     links.forEach(function(a,k){a.classList.toggle("on",k===cur)});
   }
   window.addEventListener("scroll",spy,{passive:true});spy();
+})();
+</script>
+<script>
+(function(){
+  /* À CONFIGURER : renseigne au moins l'une des deux lignes ci-dessous */
+  var ENDPOINT=""; /* adresse Formspree, ex. https://formspree.io/f/xxxxxxxx */
+  var EMAIL="cheickkone904@gmail.com"; 
+
+  var f=document.getElementById("msg"),st=document.getElementById("status");
+  function say(t,c){st.textContent=t;st.className=c||""}
+  if(EMAIL){var m=document.getElementById("mailline");m.innerHTML="";var a=document.createElement("a");a.href="mailto:"+EMAIL;a.textContent=EMAIL;m.appendChild(a)}
+  f.addEventListener("submit",function(e){
+    e.preventDefault();
+    var d=new FormData(f);
+    if(d.get("_gotcha"))return;
+    if(!d.get("nom").trim()||!d.get("message").trim()){say("Merci d'indiquer votre nom et votre message.","err");return}
+    if(ENDPOINT){
+      say("Envoi en cours...");
+      fetch(ENDPOINT,{method:"POST",body:d,headers:{Accept:"application/json"}})
+        .then(function(r){if(r.ok){f.reset();say("Merci, votre message a bien été envoyé.","ok")}else{say("L'envoi a échoué. Réessayez plus tard.","err")}})
+        .catch(function(){say("L'envoi a échoué. Vérifiez votre connexion.","err")});
+    }else if(EMAIL){
+      var body=d.get("message")+"\n\n"+d.get("nom")+(d.get("email")?" ("+d.get("email")+")":"");
+      location.href="mailto:"+EMAIL+"?subject="+encodeURIComponent(d.get("sujet")+" - Portfolio")+"&body="+encodeURIComponent(body);
+      say("Votre application de messagerie va s'ouvrir.","ok");
+    }else{
+      say("Le formulaire n'est pas encore configuré.","err");
+    }
+  });
 })();
 </script>
 </body>
